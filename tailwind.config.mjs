@@ -8,8 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "dark-green": "#032525",
+        "primary-green": "#135351",
+        "accent-yellow": "#D5A10E",
+        "light-gray": "#687B7B",
       },
     },
   },

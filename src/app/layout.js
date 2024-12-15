@@ -21,10 +21,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-dark-green`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#083333] to-dark-green text-sm min-h-screen`}
       >
         <Header />
-        {children}
+        <div className="max-w-[80vw] mx-auto">{children}</div>
       </body>
     </html>
   );

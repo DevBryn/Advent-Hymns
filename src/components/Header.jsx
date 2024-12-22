@@ -1,20 +1,22 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { HiBars3 } from "react-icons/hi2";
 import { useState } from "react";
 
 const Header = () => {
   const [selectedTab, setSelectedTab] = useState("home");
   return (
-    <header className="bg-primary-green h-14">
-      <nav className="flex justify-between max-w-[80vw] m-auto h-14 items-center">
+    <header className="bg-primary-green h-14 shadow-md sticky top-0">
+      <nav className="flex justify-between max-w-[90vw] sm:max-w-[80vw] m-auto h-14 items-center">
         <div>
-          <Link href={"/"} className="text-white font-semibold">
+          <Link href={"/"} className="text-white font-medium">
             Advent Hymns
           </Link>
         </div>
-        <div>
-          <ul className="flex gap-4">
+        <HiBars3 className="w-6 h-6 sm:hidden cursor-pointer" />
+        <div className="hidden sm:flex">
+          <ul className="flex gap-4 text-sm">
             <li
               className={`${
                 selectedTab == "home" ? "tab-selected" : "tab-normal"

@@ -10,7 +10,7 @@ const Header = () => {
     <header className="bg-primary-green h-14 shadow-md sticky top-0">
       <nav className="flex justify-between max-w-[90vw] sm:max-w-[80vw] m-auto h-14 items-center">
         <div>
-          <Link href={"/"} className="text-white font-medium">
+          <Link href={"/"} className="font-medium">
             Advent Hymns
           </Link>
         </div>

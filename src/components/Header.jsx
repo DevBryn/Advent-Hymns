@@ -36,6 +36,23 @@ const Header = () => {
             </li>
             <li
               className={`${
+                selectedTab == "songs" ? "tab-selected" : "tab-normal"
+              }`}
+            >
+              <Link
+                className={`${
+                  selectedTab == "songs"
+                    ? "text-white"
+                    : "text-light-gray hover:text-white transition-colors"
+                }`}
+                href={"/songs"}
+                onClick={() => setSelectedTab("songs")}
+              >
+                Hymnals
+              </Link>
+            </li>
+            <li
+              className={`${
                 selectedTab == "player" ? "tab-selected" : "tab-normal"
               }`}
             >

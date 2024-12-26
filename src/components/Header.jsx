@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
 import { useState } from "react";
 
 const Header = () => {
-  const [selectedTab, setSelectedTab] = useState("home");
+  const current_page = usePathname();
+
   return (
     <header className="bg-primary-green h-14 shadow-md sticky top-0">
       <nav className="flex justify-between max-w-[90vw] sm:max-w-[80vw] m-auto h-14 items-center">
@@ -19,68 +21,64 @@ const Header = () => {
           <ul className="flex gap-4 text-sm">
             <li
               className={`${
-                selectedTab == "home" ? "tab-selected" : "tab-normal"
+                current_page === "/" ? "tab-selected" : "tab-normal"
               }`}
             >
               <Link
                 className={`${
-                  selectedTab == "home"
+                  current_page === "/"
                     ? "text-white"
                     : "text-light-gray hover:text-white transition-colors"
                 }`}
                 href={"/"}
-                onClick={() => setSelectedTab("home")}
               >
                 Home
               </Link>
             </li>
             <li
               className={`${
-                selectedTab == "songs" ? "tab-selected" : "tab-normal"
+                current_page === "/songs" ? "tab-selected" : "tab-normal"
               }`}
             >
               <Link
                 className={`${
-                  selectedTab == "songs"
+                  current_page === "/songs"
                     ? "text-white"
                     : "text-light-gray hover:text-white transition-colors"
                 }`}
                 href={"/songs"}
-                onClick={() => setSelectedTab("songs")}
               >
                 Hymnals
               </Link>
             </li>
             <li
               className={`${
-                selectedTab == "player" ? "tab-selected" : "tab-normal"
+                current_page === "/player" ? "tab-selected" : "tab-normal"
               }`}
             >
               <Link
                 className={`${
-                  selectedTab == "player"
+                  current_page === "/player"
                     ? "text-white"
                     : "text-light-gray hover:text-white transition-colors"
                 }`}
                 href={"/player"}
-                onClick={() => setSelectedTab("player")}
               >
                 Player
               </Link>
             </li>
             <li
               className={`${
-                selectedTab == "about" ? "tab-selected" : "tab-normal"
+                current_page === "/about" ? "tab-selected" : "tab-normal"
               }`}
             >
               <Link
                 className={`${
-                  selectedTab == "about"
+                  current_page === "/about"
                     ? "text-white"
                     : "text-light-gray hover:text-white transition-colors"
                 }`}
                 href={"/about"}
-                onClick={() => setSelectedTab("about")}
               >
                 About
               </Link>

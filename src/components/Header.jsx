@@ -3,10 +3,16 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiBars3 } from "react-icons/hi2";
+import { HiMiniXMark } from "react-icons/hi2";
 import { useState } from "react";
 
 const Header = () => {
   const current_page = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <header className="bg-primary-green h-14 shadow-md sticky top-0">
@@ -16,7 +22,18 @@ const Header = () => {
             Advent Hymns
           </Link>
         </div>
-        <HiBars3 className="w-6 h-6 sm:hidden cursor-pointer" />
+        <div
+          onClick={handleMenuClick}
+          className={menuOpen ? "hidden sm:hidden" : "flex sm:hidden"}
+        >
+          <HiBars3 className="w-6 h-6 cursor-pointer" />
+        </div>
+        <div
+          onClick={handleMenuClick}
+          className={menuOpen ? "flex sm:hidden" : "sm:hidden hidden"}
+        >
+          <HiMiniXMark className="w-6 h-6 cursor-pointer" />
+        </div>
         <div className="hidden sm:flex">
           <ul className="flex gap-4 text-sm">
             <li
@@ -84,6 +101,22 @@ const Header = () => {
               </Link>
             </li>
           </ul>
+        </div>
+        <div
+          className={`absolute sm:hidden top-14 left-0 w-full bg-black/50 rounded-b-xl backdrop-blur-sm flex flex-col items-center gap-2 p-6 transform transition-transform ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
+        >
+          <li className="list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md">
+            Hymnals
+          </li>
+          <li className="list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md">
+            Player
+          </li>
+          <li className="list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md">
+            About
+          </li>
         </div>
       </nav>
     </header>

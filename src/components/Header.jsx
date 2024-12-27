@@ -108,14 +108,32 @@ const Header = () => {
           }`}
           style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
         >
-          <li className="list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md">
-            Hymnals
+          <li
+            className={`list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
+              current_page === "/songs" ? "bg-accent-yellow/90" : ""
+            }`}
+          >
+            <Link onClick={handleMenuClick} href={"/songs"}>
+              Hymnals
+            </Link>
           </li>
-          <li className="list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md">
-            Player
+          <li
+            className={`list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
+              current_page === "/player" ? "bg-accent-yellow/90" : ""
+            }`}
+          >
+            <Link onClick={handleMenuClick} href={"/player"}>
+              Player
+            </Link>
           </li>
-          <li className="list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md">
-            About
+          <li
+            className={`list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
+              current_page === "/about" ? "bg-accent-yellow/90" : ""
+            }`}
+          >
+            <Link onClick={handleMenuClick} href={"/about"}>
+              About
+            </Link>
           </li>
         </div>
       </nav>

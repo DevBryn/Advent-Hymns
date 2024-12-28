@@ -108,33 +108,36 @@ const Header = () => {
           }`}
           style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
         >
-          <li
-            className={`list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
-              current_page === "/songs" ? "bg-accent-yellow/90" : ""
-            }`}
-          >
-            <Link onClick={handleMenuClick} href={"/songs"}>
+          <Link className="w-full" href={"/songs"}>
+            <div
+              onClick={handleMenuClick}
+              className={`w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
+                current_page === "/songs" ? "bg-accent-yellow/90" : ""
+              }`}
+            >
               Hymnals
-            </Link>
-          </li>
-          <li
-            className={`list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
-              current_page === "/player" ? "bg-accent-yellow/90" : ""
-            }`}
-          >
-            <Link onClick={handleMenuClick} href={"/player"}>
+            </div>
+          </Link>
+          <Link className="w-full" href={"/player"}>
+            <div
+              onClick={handleMenuClick}
+              className={`w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
+                current_page === "/player" ? "bg-accent-yellow/90" : ""
+              }`}
+            >
               Player
-            </Link>
-          </li>
-          <li
-            className={`list-none w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
-              current_page === "/about" ? "bg-accent-yellow/90" : ""
-            }`}
-          >
-            <Link onClick={handleMenuClick} href={"/about"}>
+            </div>
+          </Link>
+          <Link className="w-full" href={"/about"}>
+            <div
+              onClick={handleMenuClick}
+              className={`w-full text-center p-4 hover:bg-accent-yellow/90 rounded-md ${
+                current_page === "/about" ? "bg-accent-yellow/90" : ""
+              }`}
+            >
               About
-            </Link>
-          </li>
+            </div>
+          </Link>
         </div>
       </nav>
     </header>

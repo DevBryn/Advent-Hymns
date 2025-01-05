@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-primary-green h-14 shadow-md sticky top-0">
+    <header className="bg-primary-green h-14 shadow-md sticky top-0 z-10">
       <nav className="flex justify-between max-w-[90vw] sm:max-w-[80vw] m-auto h-14 items-center">
         <div>
           <Link href={"/"} className="font-medium">
@@ -104,7 +104,9 @@ const Header = () => {
         </div>
         <div
           className={`absolute sm:hidden top-14 left-0 w-full bg-black/50 rounded-b-xl backdrop-blur-sm flex flex-col items-center gap-2 p-6 transform transition-transform ${
-            menuOpen ? "opacity-100" : "opacity-0"
+            menuOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
           }`}
           style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
         >

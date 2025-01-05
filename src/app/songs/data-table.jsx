@@ -30,7 +30,7 @@ export function DataTable({ columns, data }) {
 
   return (
     <div>
-      <div className="rounded-md border">
+      <div className="rounded-md border border-light-gray">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -80,7 +80,7 @@ export function DataTable({ columns, data }) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
+      <div className="flex items-center justify-center sm:justify-end space-x-2 py-4">
         <Button
           variant="ghost"
           size="sm"
